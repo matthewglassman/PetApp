@@ -5,7 +5,7 @@
         <div class="dogs-overlay">
           <h1 class="display-2 text-xs-center">Choose your favorite dogs</h1>
           <v-card class="dog-card">
-            <v-img heigh-"400px"></v-img>
+            <v-img height="400px"></v-img>
             <v-card-actions>
               <v-spacer></v-spacer>
               <v-btn icon>
@@ -63,12 +63,12 @@ h1{
 
 @media (max-width: 768px){
   .dogs-overlay {
-    margin: 0;h
+    margin: 0;
   }
 }
 
 .dog-card {
-  width: 100%
+  width: 100%;
   max-width: 600px;
 }
 </style>
