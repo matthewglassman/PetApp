@@ -10,7 +10,7 @@
           </v-img>
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-btn icon @click="addToFavorites">
+              <v-btn icon @click="addToFavorites" :disabled="isAlreadyInFavorites">
                 <v-icon>favorite</v-icon>
               </v-btn>
               <v-btn icon @click="loadNewDog">
@@ -67,6 +67,11 @@ export default{
   },
   created(){
     this.loadNewDog();
+  },
+  computed: {
+    isAlreadyInFavorites(){
+      return this.favoriteDogs.indexOf(this.currentDogLink) > -1
+    }
   }
 };
 </script>
