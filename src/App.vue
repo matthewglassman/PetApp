@@ -21,6 +21,7 @@
           <v-container grid-list-md fluid>
             <v-layout wrap>
               <v-flex xs6 sm4 md2 v-for="(pet, index) in favoriteDogs" :key="pet">
+                <appDog :dog="pet" @remove="removeFromFavorites(index)"></appDog>
                 <!-- <v-card class="dog-card">
                   <v-img
                   height="150px"
@@ -45,6 +46,9 @@
 import axios from "axios";
 import Dog from './components/Dog';
 export default{
+  components: {
+    appDog: Dog
+  },
   data() {
     return {
       currentDogLink: "",
