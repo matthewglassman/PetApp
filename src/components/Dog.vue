@@ -15,7 +15,7 @@
 <script>
 export default {
   props: {
-    dogs: {
+    dog: {
       type: String
     }
   }
