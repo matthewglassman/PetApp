@@ -13,7 +13,7 @@
               <v-btn icon>
                 <v-icon>favorite</v-icon>
               </v-btn>
-              <v-btn icon>
+              <v-btn icon @click="loadNewDog">
                 <v-icon>forward</v-icon>
               </v-btn>
             </v-card-actions>
