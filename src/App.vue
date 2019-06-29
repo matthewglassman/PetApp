@@ -5,7 +5,9 @@
         <div class="dogs-overlay">
           <h1 class="display-2 text-xs-center">Choose your favorite dogs</h1>
           <v-card class="dog-card">
-            <v-img height="400px"></v-img>
+            <v-img height="400px"
+            :src="currentDogLink"></v-img>
+          </v-img>
             <v-card-actions>
               <v-spacer></v-spacer>
               <v-btn icon>
@@ -23,19 +25,29 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  },
-  data () {
+import axios from "axios";
+export default{
+  data() {
     return {
-      //
+      currentDogLink: ""
+    };
+  },
+  methods: {
+    loadNewDog() {
+      axios
+      .get('https://dog.ceo/api/breeds/image/random')
+      .then(response => {
+        this.currentDogLink = response.data.message;
+      })
+      .catch(error => {
+        console.log(error);
+      });
     }
+  },
+  created(){
+    this.loadNewDog();
   }
-}
+};
 </script>
 <style>
 img {
