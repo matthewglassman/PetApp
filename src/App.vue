@@ -21,7 +21,7 @@
           <v-container grid-list-md fluid>
             <v-layout wrap>
               <v-flex xs6 sm4 md2 v-for="(pet, index) in favoriteDogs" :key="pet">
-                <v-card class="dog-card">
+                <!-- <v-card class="dog-card">
                   <v-img
                   height="150px"
                   :src="pet"></v-img>
@@ -31,7 +31,7 @@
                       <v-icon>delete</v-icon>
                     </v-btn>
                   </v-card-actions>
-                </v-card>
+                </v-card> -->
               </v-flex>
             </v-layout>
           </v-container>
@@ -43,6 +43,7 @@
 
 <script>
 import axios from "axios";
+import Dog from './components/Dog';
 export default{
   data() {
     return {
