@@ -20,10 +20,11 @@
           </v-card>
           <v-container grid-list-md fluid>
             <v-layout wrap>
-              <v-flex xs6 sm4 md2>
+              <v-flex xs6 sm4 md2 v-for="(pet, index) in favoriteDogs" :key="pet">
                 <v-card class="dog-card">
                   <v-img
-                  height="150px"></v-img>
+                  height="150px"
+                  :src="pet"></v-img>
                   <v-card-actions>
                     <v-spacer></v-spacer>
                     <v-btn icon>
