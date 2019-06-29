@@ -1,22 +1,23 @@
 <template>
   <v-app>
-    <v-toolbar app>
-      <v-toolbar-title class="headline text-uppercase">
-        <span>Vuetify</span>
-        <span class="font-weight-light">MATERIAL DESIGN</span>
-      </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn
-        flat
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-      >
-        <span class="mr-2">Latest Release</span>
-      </v-btn>
-    </v-toolbar>
-
-    <v-content>
-      <HelloWorld/>
+    <v-content class="dogs-layout">
+      <v-container fill-height>
+        <div class="dogs-overlay">
+          <h1 class="display-2 text-xs-center">Choose your favorite dogs</h1>
+          <v-card class="dog-card">
+            <v-img heigh-"400px"></v-img>
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn icon>
+                <v-icon>favorite</v-icon>
+              </v-btn>
+              <v-btn icon>
+                <v-icon>forward</v-icon>
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </div>
+      </v-container>
     </v-content>
   </v-app>
 </template>
@@ -36,3 +37,38 @@ export default {
   }
 }
 </script>
+<style>
+img {
+  max-width: 100%;
+}
+
+h1{
+  padding-bottom: 15px;
+}
+
+.dogs-layout {
+  width: 100%;
+  background: #fff center repeat;
+  background-image: url("https://github.com/VueVixens/projects/blob/master/petshop/images/bg3.jpg?raw=true");
+}
+
+.dogs-overlay{
+  width: 100%;
+  padding: 20px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 768px){
+  .dogs-overlay {
+    margin: 0;h
+  }
+}
+
+.dog-card {
+  width: 100%
+  max-width: 600px;
+}
+</style>
