@@ -18,6 +18,22 @@
               </v-btn>
             </v-card-actions>
           </v-card>
+          <v-container grid-list-md fluid>
+            <v-layout wrap>
+              <v-flex xs6 sm4 md2>
+                <v-card class="dog-card">
+                  <v-img
+                  height="150px"></v-img>
+                  <v-card-actions>
+                    <v-spacer></v-spacer>
+                    <v-btn icon>
+                      <v-icon>delete</v-icon>
+                    </v-btn>
+                  </v-card-actions>
+                </v-card>
+              </v-flex>
+            </v-layout>
+          </v-container>
         </div>
       </v-container>
     </v-content>
@@ -29,7 +45,8 @@ import axios from "axios";
 export default{
   data() {
     return {
-      currentDogLink: ""
+      currentDogLink: "",
+      favoriteDogs: []
     };
   },
   methods: {
