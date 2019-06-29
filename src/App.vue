@@ -10,7 +10,7 @@
           </v-img>
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-btn icon>
+              <v-btn icon @click="addToFavorites">
                 <v-icon>favorite</v-icon>
               </v-btn>
               <v-btn icon @click="loadNewDog">
@@ -60,6 +60,9 @@ export default{
       .catch(error => {
         console.log(error);
       });
+    },
+    addToFavorites(){
+      this.favoriteDogs.push(this.currentDogLink);
     }
   },
   created(){
